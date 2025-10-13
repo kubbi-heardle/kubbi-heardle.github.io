@@ -12,7 +12,7 @@ var app = (function () {
   
   const HEARDLE_NAME = HEARDLE_ARTIST + "Heardle";
   
-  const HEARDLE_START_DATE = "2025-07-18";
+  const HEARDLE_START_DATE = "2025-10-01";
   
   // make sure you have 7 comments here
   const HEARDLE_GAME_COMMENTS = [
