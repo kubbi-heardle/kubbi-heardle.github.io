@@ -1,0 +1,19 @@
+.a-album-cover {
+	width: 6rem;
+	border: 1px solid var(--color-line);
+}
+
+.a-label {
+	display: inline;
+	margin-left: 0.5rem;
+	user-select: none;
+}
+
+.a-p-t-6 {
+	margin-top: 1rem;
+}
+
+#sa-checkbox {
+	scale: 1.25;
+	accent-color: var(--color-positive);
+}
