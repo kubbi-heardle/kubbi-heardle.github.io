@@ -1,8 +1,8 @@
 // caution! this file contains the worst code ever known to the mankind
 date = new Date();
 let year = date.getFullYear();
-let month = 12//date.getMonth() + 1;
-let day = 1//date.getDate();
+let month = date.getMonth() + 1;
+let day = date.getDate();
 
 let left_panel = document.querySelectorAll('.flex.flex-1:not(.justify-end)')[0];
 left_panel.insertAdjacentHTML('beforeend', '<button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk air-button" onclick="AirOpen()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="22" x2="22" y2="22"></line><line x1="2" y1="22" x2="12" y2="2"></line><line x1="22" y1="22" x2="12" y2="2"></line><line x1="2" y1="10" x2="22" y2="10"></line></svg></button>');
