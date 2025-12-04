@@ -1,14 +1,14 @@
 // caution! this file contains the worst code ever known to the mankind
 date = new Date();
 let year = date.getFullYear();
-let month = date.getMonth() + 1;
-let day = date.getDate();
+let month = 12//date.getMonth() + 1;
+let day = 1//date.getDate();
 
 let left_panel = document.querySelectorAll('.flex.flex-1:not(.justify-end)')[0];
 left_panel.insertAdjacentHTML('beforeend', '<button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk air-button" onclick="AirOpen()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="22" x2="22" y2="22"></line><line x1="2" y1="22" x2="12" y2="2"></line><line x1="22" y1="22" x2="12" y2="2"></line><line x1="2" y1="10" x2="22" y2="10"></line></svg></button>');
 
-if(localStorage.getItem('ignoreAlbumBirthdays') == null) {
-	localStorage.setItem('ignoreAlbumBirthdays', '[]');
+if(localStorage.getItem('ignoreAlbumBirthdays')[0] == '[') {
+	localStorage.setItem('ignoreAlbumBirthdays', '');
 }
 if(localStorage.getItem('showAlbumBirthdays') == null) {
 	localStorage.setItem('showAlbumBirthdays', 'true');
@@ -31,7 +31,7 @@ album_birthdays = [
 {cover:"https://f4.bcbits.com/img/a1938345197_10.jpg",title:"Kubbi's Home Office EP",day:5,month:3,year:2021}
 ];
 
-if(!JSON.parse(localStorage.getItem('ignoreAlbumBirthdays')).includes(`${day}-${month}-${year}`) & JSON.parse(localStorage.getItem('showAlbumBirthdays'))) {
+if(localStorage.getItem('ignoreAlbumBirthdays') != `${day}-${month}-${year}` & JSON.parse(localStorage.getItem('showAlbumBirthdays'))) {
 	let album_t_yo = [];
 	album_birthdays.forEach(album => {
 		if(day == album.day & month == album.month) {
@@ -76,7 +76,5 @@ function AlbumClose() {
 	let popup = document.getElementsByClassName('album-popup');
 	popup[1].remove();
 	popup[0].remove();
-	let ignore_album_birthdays = JSON.parse(localStorage.getItem('ignoreAlbumBirthdays'));
-	ignore_album_birthdays.push(`${day}-${month}-${year}`);
-	localStorage.setItem('ignoreAlbumBirthdays', JSON.stringify(ignore_album_birthdays));
+	localStorage.setItem('ignoreAlbumBirthdays', `${day}-${month}-${year}`);
 }
